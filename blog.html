@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog & Resources - LessonAI</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1f5fff;--navy:#0b1b4d;--ink:#10224f;--muted:#5b6788;--bg:#f4f7ff;--line:#e3e9f8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;display:flex;flex-direction:column;min-height:100vh}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px;width:100%}
+header{background:#fff;border-bottom:1px solid var(--line);padding:16px 0;box-shadow:0 2px 10px rgba(0,0,0,0.02);position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo svg{width:36px;height:36px;}
+.logo b{font-size:22px;font-weight:800;color:var(--navy);line-height:1;}
+.logo b span{color:var(--blue);}
+.back-link{font-size:14px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:6px;}
+.back-link:hover{color:var(--blue)}
+main{flex-grow:1;padding:60px 0 80px;}
+.page-title{text-align:center;margin-bottom:50px;}
+.page-title h1{font-size:42px;color:var(--navy);font-weight:800;margin-bottom:12px;}
+.page-title p{font-size:18px;color:var(--muted);}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;}
+.blog-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(31,63,160,.08);border:1px solid var(--line);transition:.3s;display:flex;flex-direction:column;}
+.blog-card:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(31,63,160,.15);}
+.blog-img{height:180px;background:linear-gradient(135deg, #e0eaff, #c2d6ff);display:flex;align-items:center;justify-content:center;font-size:40px;}
+.blog-content{padding:24px;flex-grow:1;display:flex;flex-direction:column;}
+.blog-content span{font-size:12px;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;display:block;}
+.blog-content h3{font-size:18px;color:var(--navy);margin-bottom:12px;line-height:1.4;font-weight:700;}
+.blog-content p{font-size:14px;color:var(--muted);margin-bottom:20px;flex-grow:1;}
+.read-more{font-size:14px;font-weight:600;color:var(--blue);display:inline-flex;align-items:center;gap:5px;}
+footer{text-align:center;padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line);background:#fff;}
+@media(max-width:900px){ .blog-grid{grid-template-columns:1fr 1fr;} }
+@media(max-width:600px){ .blog-grid{grid-template-columns:1fr;} .page-title h1{font-size:32px;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 48 48"><path d="M4 10c7-2 14-1 20 3v26c-6-4-13-5-20-3z" fill="#1f5fff"/><path d="M44 10c-7-2-14-1-20 3v26c6-4 13-5 20-3z" fill="#4a86ff"/></svg>
+      <div><b>Lesson<span>AI</span></b></div>
+    </a>
+    <a href="index.html" class="back-link">&larr; Back to Home</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-title">
+    <h1>Resources & Articles</h1>
+    <p>Tips, guides, and insights for modern educators.</p>
+  </div>
+
+  <div class="blog-grid">
+    <!-- Article 1 (Targets: free ai lesson plan generator for teachers) -->
+    <a href="article-1.html" class="blog-card">
+      <div class="blog-img">📚</div>
+      <div class="blog-content">
+        <span>AI Tools</span>
+        <h3>How to Use a Free AI Lesson Plan Generator for Teachers</h3>
+        <p>Discover how a free AI lesson plan generator for teachers can save you hours of prep time and improve classroom outcomes.</p>
+        <div class="read-more">Read Article &rarr;</div>
+      </div>
+    </a>
+
+    <!-- Article 2 (Targets: best free ai lesson plan generator pdf) -->
+    <a href="article-2.html" class="blog-card">
+      <div class="blog-img">📄</div>
+      <div class="blog-content">
+        <span>Productivity</span>
+        <h3>Best Free AI Lesson Plan Generator with PDF Download</h3>
+        <p>Looking for the best free AI lesson plan generator? Learn how to create, download, and print your plans in PDF format instantly.</p>
+        <div class="read-more">Read Article &rarr;</div>
+      </div>
+    </a>
+
+    <!-- Article 3 (Targets: free ai lesson plan generator philippines & study plan) -->
+    <a href="article-3.html" class="blog-card">
+      <div class="blog-img">🌍</div>
+      <div class="blog-content">
+        <span>Global Teaching</span>
+        <h3>Free Online AI Lesson Plan Generator for Philippines & Study Plans</h3>
+        <p>Tailored for global educators. Learn how to generate DepEd-aligned lesson plans or use our free AI study plan creator.</p>
+        <div class="read-more">Read Article &rarr;</div>
+      </div>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 LessonAI. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

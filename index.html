@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LessonAI – AI Lesson Plan Generator | by NorthReason</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Create professional, curriculum-aligned lesson plans in seconds using AI. Free tool for teachers, students, and professionals. No signup required.">
+<meta name="keywords" content="AI lesson plan generator, free lesson plan maker, automated lesson planning, AI for teachers, lesson plan creator, curriculum aligned">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="NorthReason">
+
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lessonplanai.site/">
+<meta property="og:title" content="LessonAI – AI Lesson Plan Generator">
+<meta property="og:description" content="Create professional, curriculum-aligned lesson plans in seconds using AI. Free for all educators worldwide.">
+<meta property="og:image" content="https://lessonplanai.site/logo.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LessonAI – AI Lesson Plan Generator">
+<meta name="twitter:description" content="Create professional lesson plans in seconds using AI. 100% Free.">
+<meta name="twitter:image" content="https://lessonplanai.site/logo.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="logo.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "LessonAI",
+  "url": "https://lessonplanai.site/",
+  "description": "Create professional, curriculum-aligned lesson plans in seconds using AI.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "NorthReason",
+    "url": "https://northreason.com/"
+  }
+}
+</script>
+
+<style>
+:root{--blue:#1f5fff;--navy:#0b1b4d;--ink:#10224f;--muted:#5b6788;--bg:#f4f7ff;--line:#e3e9f8}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.5;overflow-x:hidden;}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:14px;border:1.5px solid var(--blue);cursor:pointer;font-family:inherit;transition:.2s}
+.btn.pri{background:var(--blue);color:#fff;box-shadow:0 8px 20px rgba(31,95,255,.3)}
+.btn.pri:hover{background:#0f4ae0}
+.btn.out{background:#fff;color:var(--ink)}
+.btn.out:hover{background:var(--bg)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #9db8ff;outline-offset:2px}
+
+/* header */
+.hero-bg{background:linear-gradient(180deg,#eaf0ff 0%,#f6f8ff 70%,#fff 100%);position:relative;overflow:hidden;padding-bottom:90px}
+.hero-bg::after{content:"";position:absolute;right:-120px;top:60px;width:420px;height:420px;border-radius:50%;background:#cfdcff;opacity:.6;z-index:0}
+header{position:relative;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:15px 0;gap:16px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{height:55px; width:auto; display:block;}
+
+nav ul{display:flex;gap:6px;align-items:center}
+nav a{padding:8px 16px;border-radius:999px;font-size:13px;font-weight:500}
+nav a:hover{background:#e0e8ff}
+nav a.active{background:var(--blue);color:#fff}
+.myplans{background:var(--blue);color:#fff;padding:10px 18px;border-radius:999px;font-size:13px;font-weight:600;white-space:nowrap;}
+
+/* Mobile Menu Button */
+.mobile-toggle { display: none; background: none; border: none; font-size: 28px; color: var(--navy); cursor: pointer; }
+/* Mobile Nav Dropdown */
+.mobile-nav { display: none; flex-direction: column; background: #fff; position: absolute; top: 100%; left: 0; width: 100%; padding: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-top: 1px solid var(--line); z-index: 100;}
+.mobile-nav a { padding: 12px 16px; border-radius: 8px; font-weight: 600; border-bottom: 1px solid var(--bg); }
+.mobile-nav a:hover { background: var(--bg); color: var(--blue); }
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:20px;align-items:center;position:relative;z-index:2;padding-top:20px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#dff3ea;color:#16794c;font-weight:600;font-size:13px;padding:5px 14px;border-radius:999px}
+.pill i{width:18px;height:18px;border-radius:50%;background:#1fa463;color:#fff;font-style:normal;font-size:11px;display:grid;place-items:center}
+h1{font-size:clamp(36px,6vw,70px);line-height:1.1;font-weight:800;color:var(--navy);margin:14px 0 20px;letter-spacing:-1.5px}
+h1 span{color:var(--blue);display:block}
+.hero h2{font-size:clamp(16px, 2vw, 20px);line-height:1.4;font-weight:600;max-width:440px;margin-bottom:14px}
+.hero p{color:#2a3a63;font-size:14px;max-width:360px;margin-bottom:26px}
+.hero .btns{display:flex;gap:14px;flex-wrap:wrap}
+.play{width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:9px}
+
+/* hero art */
+.art{position:relative;margin-right:-24px}
+.art svg{width:100%;height:auto;display:block;overflow:visible;max-height:450px;}
+
+/* features */
+.features{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:-60px;position:relative;z-index:3}
+.feat{background:#fff;border-radius:16px;padding:20px 12px;text-align:center;box-shadow:0 10px 30px rgba(31,63,160,.1);border:1px solid var(--line)}
+.ico{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-size:22px;margin:0 auto 10px}
+.feat b{display:block;font-size:14px;font-weight:600}
+.feat small{display:block;color:var(--muted);font-size:12px;line-height:1.4;margin-top:4px}
+
+/* titles */
+.title{text-align:center;margin:44px 0 22px}
+.title em{display:inline-flex;align-items:center;gap:12px;font-style:normal;color:var(--blue);font-weight:600;font-size:14px}
+.title em::before,.title em::after{content:"";width:22px;height:2px;background:var(--blue)}
+.title h3{font-size:28px;font-weight:700;color:var(--navy);margin-top:2px}
+
+/* categories */
+.cats{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
+.cat{border-radius:14px;padding:18px 6px 12px;text-align:center;font-size:12px;font-weight:600;border:1px solid rgba(0,0,0,.05);transition:.2s}
+.cat:hover{transform:translateY(-3px)}
+.cat span{display:block;font-size:30px;margin-bottom:6px}
+
+/* generator section */
+.gen{display:grid;grid-template-columns:1fr 1.3fr;margin-top:50px;border-radius:24px;overflow:hidden;box-shadow:0 15px 50px rgba(31,63,160,.12);border:1px solid var(--line);background:#fff}
+.gen-l{padding:45px 40px;position:relative;background:linear-gradient(180deg, #f8faff 0%, #ffffff 100%);border-right:1px solid var(--line)}
+.tag{display:inline-block;background:#e8efff;color:var(--blue);padding:6px 14px;border-radius:999px;font-size:12px;font-weight:600;margin-bottom:18px;letter-spacing:0.5px}
+.gen-l h3{font-size:32px;line-height:1.2;font-weight:800;color:var(--navy);margin-bottom:16px}
+.gen-l p{font-size:15px;color:var(--muted);margin-bottom:28px;line-height:1.6}
+.gen-l ul{display:flex;flex-direction:column;gap:14px}
+.gen-l li{font-size:14px;font-weight:500;color:var(--ink);display:flex;align-items:center;gap:10px}
+.gen-l li::before{content:"✔";color:#fff;background:#1fa463;width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0}
+
+.gen-r{padding:45px 40px;display:flex;flex-direction:column;justify-content:center}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:8px}
+label{display:block;font-size:14px;font-weight:600;margin:0 0 8px 0;color:var(--navy)}
+select,input{width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;font:inherit;font-size:14px;background:#fcfdff;color:var(--ink);transition:.2s}
+select:focus, input:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(31,95,255,.1)}
+.gen-r .btn{width:100%;justify-content:center;border-radius:12px;margin-top:30px;padding:16px;font-size:16px}
+
+/* what you get */
+.get{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.chip{display:flex;align-items:center;gap:8px;padding:12px;border-radius:14px;background:#f3f6ff;border:1px solid var(--line);font-size:12px;font-weight:500}
+.chip i{width:30px;height:30px;border-radius:50%;background:#dfe8ff;display:grid;place-items:center;font-style:normal;font-size:14px;flex:none}
+.sub{text-align:center;color:#2a3a63;font-size:15px}
+
+/* footer */
+footer{background:var(--navy);color:#fff;margin-top:36px;padding:36px 0 18px;border-radius:40px 40px 0 0}
+.fgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.2fr;gap:30px}
+footer .logo img{
+    height:70px; 
+    width:auto; 
+    display:block; 
+    margin-bottom:15px;
+    background:#ffffff;
+    padding:8px 16px;
+    border-radius:12px;
+}
+footer p{font-size:13px;margin:12px 0;color:#d6defa}
+footer h4{font-size:14px;margin-bottom:10px}
+footer li{font-size:12px;margin:7px 0;color:#d6defa}
+footer li a:hover{color:#fff;text-decoration:underline}
+
+/* Social Icons */
+.social-icons { display: flex; gap: 10px; margin-top: 15px; }
+.social-icons a { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,0.05); border-radius: 50%; transition: 0.2s; border: 1px solid rgba(255,255,255,0.1); }
+.social-icons a:hover { background: var(--blue); transform: translateY(-3px); border-color: var(--blue); }
+.social-icons svg { width: 18px; height: 18px; fill: #fff; }
+
+.sub-f{display:flex;gap:0;margin-top:10px}
+.sub-f input{border-radius:8px 0 0 8px;border:0;font-size:12px; background:#fff; color:#000; padding:10px;}
+.sub-f button{background:var(--blue);color:#fff;border:0;padding:0 16px;font-weight:600;border-radius:0 8px 8px 0;cursor:pointer;font-family:inherit}
+.copy{display:flex;justify-content:space-between;border-top:1px solid #243a7a;margin-top:26px;padding-top:16px;font-size:12px;color:#d6defa;flex-wrap:wrap;gap:8px}
+
+/* =========================================
+   MOBILE RESPONSIVE FIXES
+   ========================================= */
+@media(max-width:1000px){
+ nav { display: none; }
+ .mobile-toggle { display: block; }
+ .hero { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+ .hero .btns { justify-content: center; }
+ .hero h2, .hero p { margin-left: auto; margin-right: auto; }
+ .art { margin-right: 0; max-width: 500px; margin: 0 auto; }
+ 
+ .features { grid-template-columns: repeat(2,1fr); margin-top: 30px; }
+ .gen { grid-template-columns:1fr; }
+ .gen-l { border-right:none; border-bottom:1px solid var(--line); padding:35px 30px; }
+ .gen-r { padding:35px 30px; }
+ .fgrid { grid-template-columns:1fr 1fr; gap:40px; }
+}
+
+@media(max-width:768px){
+ .wrap { padding: 0 16px; }
+ .logo img { height: 45px; }
+ .myplans { padding: 8px 14px; font-size: 12px; }
+ .hero-bg { padding-bottom: 50px; }
+ 
+ /* Fix hero svg on mobile */
+ .art { max-width: 320px; }
+ 
+ /* Features & Categories Grids */
+ .features { grid-template-columns: 1fr; gap: 10px; }
+ .feat { display: flex; align-items: center; text-align: left; padding: 15px; gap: 15px; }
+ .ico { margin: 0; width: 40px; height: 40px; font-size: 18px; flex-shrink: 0; }
+ .feat b { font-size: 14px; }
+ .feat small { font-size: 11px; margin-top: 2px; }
+ 
+ .cats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+ .cat { padding: 15px 10px; font-size: 13px; }
+ .cat span { font-size: 26px; margin-bottom: 4px; }
+ 
+ .title { margin: 30px 0 15px; }
+ .title h3 { font-size: 22px; }
+ 
+ /* Generator Form */
+ .gen { margin-top: 20px; border-radius: 16px; }
+ .gen-l h3 { font-size: 24px; }
+ .gen-l p { font-size: 13px; margin-bottom: 15px; }
+ .row { grid-template-columns: 1fr; gap: 15px; }
+ .gen-r { padding: 25px 20px; }
+ 
+ /* What You'll Get Chips */
+ .get { grid-template-columns: 1fr 1fr; gap: 10px; }
+ .chip { padding: 10px; font-size: 11px; }
+ 
+ /* =========================================
+    FOOTER MOBILE 2-COLUMN FIX
+    ========================================= */
+ .fgrid { 
+     grid-template-columns: 1fr 1fr; /* 2 Columns */
+     text-align: center; 
+     gap: 30px 15px; 
+ }
+ 
+ /* Row 1: Logo (Span 2) */
+ .fgrid > div:nth-child(1) { 
+     grid-column: span 2; 
+     display: flex; 
+     flex-direction: column; 
+     align-items: center; 
+ }
+ 
+ /* Row 3: Subscribe (Span 2) */
+ .fgrid > div:nth-child(4) { 
+     grid-column: span 2; 
+ }
+ 
+ /* Links alignment */
+ footer h4 { margin-bottom: 15px; }
+ footer li { margin: 10px 0; }
+ 
+ /* Subscribe Input Mobile */
+ .sub-f { flex-direction: column; gap: 10px; width: 100%; max-width: 400px; margin: 10px auto 0 auto; }
+ .sub-f input, .sub-f button { border-radius: 8px; width: 100%; padding: 12px; }
+ 
+ /* Copyright */
+ .copy { flex-direction: column; text-align: center; gap: 10px; margin-top: 20px; }
+}
+
+@media(max-width:400px){
+ .get { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero-bg">
+<header>
+  <div class="wrap nav">
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="LessonAI Logo">
+    </a>
+    
+    <!-- Desktop Nav -->
+    <nav><ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="tool.html">Create Plan</a></li>
+      <li><a href="blog.html">Resources</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul></nav>
+    
+    <!-- CTA & Mobile Toggle -->
+    <div style="display:flex; align-items:center; gap:10px;">
+        <a href="tool.html" class="myplans">⭳ Start Generating</a>
+        <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile Nav Dropdown -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="tool.html">Create Plan</a>
+    <a href="blog.html">Resources</a>
+    <a href="faq.html">FAQ</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+</header>
+
+<section class="wrap hero">
+  <div>
+    <span class="pill"><i>✔</i>Free &amp; Easy to Use</span>
+    <h1>Lesson Plan <span>Generator</span></h1>
+    <h2>Create professional lesson plans in seconds — for teachers, students, and everyone!</h2>
+    <p>Just choose your category, enter a topic, and get a complete lesson plan with objectives, activities, and more. Download, print, and use it freely.</p>
+    <div class="btns">
+      <a href="tool.html" class="btn pri">⚡ Create Your Lesson Plan →</a>
+      <a href="#generator" class="btn out"><span class="play">▶</span>Try it Below</a>
+    </div>
+  </div>
+  <div class="art" aria-hidden="true">
+<svg viewBox="0 0 580 430" xmlns="http://www.w3.org/2000/svg" role="img">
+<defs>
+ <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9a066"/><stop offset=".5" stop-color="#b87b3d"/><stop offset="1" stop-color="#8f5a26"/></linearGradient>
+ <linearGradient id="woodH" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e3ad72"/><stop offset=".5" stop-color="#c58a4a"/><stop offset="1" stop-color="#9a6429"/></linearGradient>
+ <linearGradient id="board" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f353a"/><stop offset="1" stop-color="#171a1d"/></linearGradient>
+ <linearGradient id="cup" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#dfe6f5"/><stop offset=".35" stop-color="#fff"/><stop offset="1" stop-color="#cdd6ea"/></linearGradient>
+ <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#000" stop-opacity=".2"/></linearGradient>
+ <pattern id="pg" width="4" height="3" patternUnits="userSpaceOnUse"><rect width="4" height="3" fill="#fbf3e1"/><rect y="2" width="4" height="1" fill="#e2d4b4"/></pattern>
+ <filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#0b1b4d" flood-opacity=".28"/></filter>
+ <filter id="blur"><feGaussianBlur stdDeviation="9"/></filter>
+ <g id="pen">
+  <polygon points="0,0 -3,13 3,13" fill="#3b3b3b"/>
+  <polygon points="-3,13 3,13 7,34 -7,34" fill="#efc78f"/>
+  <rect x="-7" y="34" width="14" height="108" fill="var(--c)"/>
+  <rect x="0" y="34" width="7" height="108" fill="#000" opacity=".2"/>
+  <rect x="-5" y="34" width="2.5" height="108" fill="#fff" opacity=".4"/>
+  <rect x="-7" y="142" width="14" height="11" fill="#c5cbd5"/>
+  <rect x="-7" y="146" width="14" height="1.5" fill="#8d95a3"/>
+  <rect x="-7" y="153" width="14" height="9" rx="2" fill="#f3a1ac"/>
+ </g>
+ <g id="book">
+  <rect width="16" height="1" opacity="0"/>
+ </g>
+</defs>
+<g stroke="#8f5a26" stroke-width="9" stroke-linecap="round"><line x1="370" y1="300" x2="345" y2="392"/><line x1="500" y1="300" x2="528" y2="392"/></g>
+<g filter="url(#sh)">
+ <rect x="318" y="62" width="250" height="236" rx="8" fill="url(#wood)"/>
+ <g stroke="#000" stroke-opacity=".1" stroke-width="1"><line x1="318" y1="74" x2="568" y2="74"/><line x1="318" y1="285" x2="568" y2="285"/><line x1="330" y1="62" x2="330" y2="298"/><line x1="556" y1="62" x2="556" y2="298"/></g>
+ <rect x="334" y="78" width="218" height="204" rx="3" fill="url(#board)" stroke="#5a3b17" stroke-width="3"/>
+ <ellipse cx="440" cy="240" rx="80" ry="30" fill="#fff" opacity=".08" filter="url(#blur)"/>
+ <ellipse cx="400" cy="130" rx="60" ry="22" fill="#fff" opacity=".05" filter="url(#blur)"/>
+ <text x="443" y="150" text-anchor="middle" font-family="Caveat,'Segoe Script',cursive" font-size="40" fill="#f6f4ec" font-style="italic" transform="rotate(-3 443 150)">Plan Better…</text>
+ <text x="447" y="210" text-anchor="middle" font-family="Caveat,'Segoe Script',cursive" font-size="40" fill="#f6f4ec" font-style="italic" transform="rotate(-3 447 210)">Teach Better…</text>
+ <rect x="326" y="290" width="234" height="14" rx="3" fill="url(#woodH)"/>
+ <rect x="350" y="283" width="26" height="7" rx="2" fill="#fff"/>
+ <rect x="486" y="278" width="40" height="12" rx="3" fill="#3a4a8c"/><rect x="486" y="285" width="40" height="5" rx="2" fill="#d9c9a0"/>
+</g>
+<ellipse cx="170" cy="392" rx="190" ry="14" fill="#0b1b4d" opacity=".22" filter="url(#blur)"/>
+<rect x="0" y="384" width="580" height="26" rx="4" fill="url(#woodH)"/>
+<rect x="0" y="384" width="580" height="3" fill="#fff" opacity=".35"/>
+<g stroke="#000" stroke-opacity=".1"><line x1="60" y1="395" x2="240" y2="395"/><line x1="320" y1="401" x2="520" y2="401"/></g>
+<g>
+ <rect x="14" y="338" width="292" height="46" rx="5" fill="#173fb0"/>
+ <rect x="22" y="338" width="284" height="7" rx="2" fill="#1f5fff"/><rect x="22" y="377" width="284" height="7" rx="2" fill="#1f5fff"/>
+ <rect x="30" y="345" width="274" height="32" fill="url(#pg)"/>
+ <rect x="14" y="338" width="18" height="46" rx="6" fill="#1f5fff"/><rect x="14" y="338" width="18" height="46" rx="6" fill="url(#gloss)"/>
+ <rect x="18" y="347" width="10" height="2.5" fill="#f6c453"/><rect x="18" y="373" width="10" height="2.5" fill="#f6c453"/>
+ <rect x="30" y="345" width="274" height="32" fill="#000" opacity=".06"/>
+</g>
+<g>
+ <rect x="34" y="292" width="262" height="46" rx="5" fill="#c9660e"/>
+ <rect x="42" y="292" width="254" height="7" rx="2" fill="#f08a24"/><rect x="42" y="331" width="254" height="7" rx="2" fill="#f08a24"/>
+ <rect x="50" y="299" width="244" height="32" fill="url(#pg)"/>
+ <rect x="34" y="292" width="18" height="46" rx="6" fill="#f08a24"/><rect x="34" y="292" width="18" height="46" rx="6" fill="url(#gloss)"/>
+ <rect x="38" y="301" width="10" height="2.5" fill="#fff3c9"/><rect x="38" y="327" width="10" height="2.5" fill="#fff3c9"/>
+</g>
+<g transform="rotate(-1.2 140 268)">
+ <rect x="24" y="246" width="240" height="46" rx="5" fill="#0f2a73"/>
+ <rect x="32" y="246" width="232" height="7" rx="2" fill="#1d4bb8"/><rect x="32" y="285" width="232" height="7" rx="2" fill="#1d4bb8"/>
+ <rect x="40" y="253" width="222" height="32" fill="url(#pg)"/>
+ <rect x="24" y="246" width="18" height="46" rx="6" fill="#1d4bb8"/><rect x="24" y="246" width="18" height="46" rx="6" fill="url(#gloss)"/>
+ <rect x="28" y="255" width="10" height="2.5" fill="#f6c453"/><rect x="28" y="281" width="10" height="2.5" fill="#f6c453"/>
+</g>
+<ellipse cx="172" cy="248" rx="52" ry="7" fill="#000" opacity=".2"/>
+<ellipse cx="172" cy="134" rx="44" ry="11" fill="#9aa6c4"/>
+<g transform="translate(172 140)">
+ <use href="#pen" style="--c:#e53935" transform="rotate(-24) translate(0,-150)"/>
+ <use href="#pen" style="--c:#f5a623" transform="rotate(-13) translate(0,-170)"/>
+ <use href="#pen" style="--c:#1f5fff" transform="rotate(-3) translate(0,-182)"/>
+ <use href="#pen" style="--c:#1fa463" transform="rotate(7) translate(0,-172)"/>
+ <use href="#pen" style="--c:#173d99" transform="rotate(17) translate(0,-160)"/>
+ <use href="#pen" style="--c:#8e44ad" transform="rotate(26) translate(0,-140)"/>
+</g>
+<path d="M128 134 A44 11 0 0 0 216 134 L212 242 Q172 256 132 242 Z" fill="url(#cup)"/>
+<path d="M128 134 A44 11 0 0 0 216 134" fill="none" stroke="#b9c4de" stroke-width="2"/>
+<rect x="131" y="186" width="82" height="22" fill="#1f5fff" opacity=".9"/>
+<path d="M131 208 Q172 216 213 208 L213 208 L213 186 Q172 194 131 186Z" fill="#1f5fff"/>
+<text x="172" y="205" text-anchor="middle" font-family="Poppins,sans-serif" font-weight="700" font-size="13" fill="#fff">LessonAI</text>
+</svg>
+</div>
+</section>
+</div>
+
+<main class="wrap">
+  <section class="features">
+    <div class="feat"><div class="ico" style="background:#ffe9cf">⚡</div><div><b>Instant Generation</b><small>Get your lesson plan in seconds</small></div></div>
+    <div class="feat"><div class="ico" style="background:#d6f5e4">⭳</div><div><b>Download &amp; Print</b><small>Save as PDF and print easily</small></div></div>
+    <div class="feat"><div class="ico" style="background:#dbe6ff">👥</div><div><b>For Everyone</b><small>Teachers, Students, &amp; Professionals</small></div></div>
+    <div class="feat"><div class="ico" style="background:#dfe3ff">▦</div><div><b>Multiple Categories</b><small>All subjects &amp; levels</small></div></div>
+    <div class="feat"><div class="ico" style="background:#d6f5e4">🎁</div><div><b>100% Free</b><small>No registration required</small></div></div>
+  </section>
+
+  <div class="title"><em>Explore Categories</em><h3>Create Lesson Plans for Any Subject</h3></div>
+  <section class="cats">
+    <a href="tool.html" class="cat" style="background:#e2ecff"><span>🧮</span>Mathematics</a>
+    <a href="tool.html" class="cat" style="background:#dcf5e5"><span>🧪</span>Science</a>
+    <a href="tool.html" class="cat" style="background:#e8e4ff"><span>📖</span>English</a>
+    <a href="tool.html" class="cat" style="background:#ffeadb"><span>🏛️</span>History</a>
+    <a href="tool.html" class="cat" style="background:#d9f4f6"><span>💻</span>Computer Science</a>
+    <a href="tool.html" class="cat" style="background:#ffe3ea"><span>🎨</span>Arts &amp; Crafts</a>
+    <a href="tool.html" class="cat" style="background:#eaf7d8"><span>🌐</span>Languages</a>
+    <a href="tool.html" class="cat" style="background:#ece6ff"><span>•••</span>&amp; More</a>
+  </section>
+
+  <!-- GENERATOR SECTION -->
+  <section class="gen" id="generator">
+    <div class="gen-l">
+      <span class="tag">100% FREE AI TOOL</span>
+      <h3>Generate Your Custom<br>Lesson Plan</h3>
+      <p>Provide your class details below. Our AI will instantly generate a structured, curriculum-aligned plan complete with everything you need.</p>
+      <ul>
+        <li>Curriculum-aligned structure</li>
+        <li>Tailored to your grade level</li>
+        <li>Includes activities & assessments</li>
+        <li>Ready to print or save as PDF</li>
+      </ul>
+    </div>
+    
+    <form class="gen-r" onsubmit="handleFormSubmit(event)">
+      <div class="row">
+        <div>
+          <label for="cat">Select Category</label>
+          <select id="cat">
+            <option>Mathematics</option><option>Science</option><option>English</option>
+            <option>History</option><option>Computer Science</option><option>Arts &amp; Crafts</option><option>Languages</option>
+          </select>
+        </div>
+        <div>
+          <label for="aud">Select Audience</label>
+          <select id="aud">
+            <option>High School</option><option>Primary School</option><option>Middle School</option>
+            <option>University</option><option>Professionals</option>
+          </select>
+        </div>
+      </div>
+      
+      <div style="margin-top: 8px;">
+        <label for="topic">Topic / Lesson Title</label>
+        <input id="topic" type="text" placeholder="e.g. Fractions, Photosynthesis" required>
+      </div>
+      
+      <div style="margin-top: 8px;">
+        <label for="obj">Learning Objectives (Optional)</label>
+        <input id="obj" type="text" placeholder="e.g. Understand the basics of fractions...">
+      </div>
+      
+      <button class="btn pri" type="submit">✨ Generate Lesson Plan →</button>
+    </form>
+  </section>
+
+  <div class="title" style="margin-bottom:6px"><h3 style="font-size:26px">— What You’ll Get —</h3></div>
+  <p class="sub" style="margin-bottom:18px">A complete, ready-to-use lesson plan with:</p>
+  <section class="get">
+    <div class="chip"><i>📄</i>Detailed Lesson Plan</div>
+    <div class="chip"><i>🎯</i>Learning Objectives</div>
+    <div class="chip"><i>👥</i>Class Activities</div>
+    <div class="chip"><i>📝</i>Assessment Ideas</div>
+    <div class="chip"><i>🖨️</i>Printable PDF</div>
+    <div class="chip"><i>✏️</i>Easy to Edit</div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a href="index.html" class="logo">
+          <img src="logo.png" alt="LessonAI Logo">
+        </a>
+        <p>Create, download and print lesson plans for free. Anytime, anywhere.</p>
+        <p style="font-size:12px; margin-top:-5px;">A proudly built product of <a href="https://northreason.com/" target="_blank" style="color:#4a86ff; font-weight:600; text-decoration:underline;">NorthReason</a>.</p>
+        
+        <!-- Real Social Icons -->
+        <div class="social-icons">
+          <a href="https://web.facebook.com/profile.php?id=61595322387156" target="_blank" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@NorthReason" target="_blank" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://github.com/NorthReason" target="_blank" aria-label="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="https://www.reddit.com/user/northreason-ai/" target="_blank" aria-label="Reddit">
+            <svg viewBox="0 0 24 24"><path d="M14.238 15.348c.085.084.085.221 0 .306-.465.463-1.204.682-1.957.682-.753 0-1.492-.219-1.957-.682-.085-.085-.085-.222 0-.306.085-.085.222-.085.306 0 .376.373.971.55 1.651.55s1.275-.177 1.651-.55c.084-.085.221-.085.306 0zm-2.66 1.632c-.47.47-1.23.47-1.7 0-.085-.085-.221-.085-.306 0-.085.085-.085.221 0 .306.615.615 1.61.615 2.225 0 .085-.085.085-.221 0-.306-.085-.085-.221-.085-.306 0zm6.26-8.285c-.533 0-1.032.192-1.422.513A12.12 12.12 0 0012 6.666c-1.516 0-2.936.443-4.129 1.202A1.984 1.984 0 005.5 7.7a1.99 1.99 0 00-1.99 1.99c0 .604.271 1.145.699 1.507-.037.246-.058.498-.058.755C4.15 15.784 7.79 18.77 12 18.77s7.85-2.986 7.85-6.666c0-.257-.02-.509-.057-.755A1.987 1.987 0 0021.5 9.69c0-1.1-.89-1.99-1.99-1.99zM8.32 11.83c0-.69.56-1.25 1.25-1.25s1.25.56 1.25 1.25-.56 1.25-1.25 1.25-1.25-.56-1.25-1.25zm7.36 0c0-.69.56-1.25 1.25-1.25s1.25.56 1.25 1.25-.56 1.25-1.25 1.25-1.25-.56-1.25-1.25z"/></svg>
+          </a>
+          <a href="https://www.pinterest.com/joyiamustafa/" target="_blank" aria-label="Pinterest">
+            <svg viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.17 0 7.41 2.967 7.41 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C24 5.367 18.624 0 12.017 0z"/></svg>
+          </a>
+        </div>
+      </div>
+      
+      <div><h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tool.html">Create Plan</a></li>
+          <li><a href="blog.html">Resources / Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div><h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+      
+      <div><h4>Subscribe for Updates</h4><p style="font-size:12px;margin:0">Get new templates and features.</p>
+        <form class="sub-f" onsubmit="event.preventDefault();alert('Thanks for subscribing!')"><input type="email" placeholder="Your Email Address" aria-label="Email address" required><button>Subscribe</button></form>
+      </div>
+    </div>
+    
+    <div class="copy">
+      <span>© 2026 LessonAI. All rights reserved.</span>
+      <span>Free Education for a Better Tomorrow <span style="color:#ff4d5a">♥</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+// Mobile Menu Toggle
+function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    if (nav.style.display === 'flex') {
+        nav.style.display = 'none';
+    } else {
+        nav.style.display = 'flex';
+    }
+}
+
+// Form Submit
+function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    const subject = document.getElementById('cat').value;
+    const grade = document.getElementById('aud').value;
+    const topic = document.getElementById('topic').value;
+    const objectives = document.getElementById('obj').value;
+    
+    sessionStorage.setItem('lp_subject', subject);
+    sessionStorage.setItem('lp_grade', grade);
+    sessionStorage.setItem('lp_topic', topic);
+    sessionStorage.setItem('lp_objectives', objectives);
+    
+    window.location.href = 'tool.html';
+}
+</script>
+
+</body>
+</html>

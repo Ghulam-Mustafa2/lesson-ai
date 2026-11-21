@@ -1,0 +1,22 @@
+# LessonAI - AI Lesson Plan Generator
+
+> LessonAI is a free, AI-powered web application that generates professional, curriculum-aligned lesson plans for teachers, students, and professionals in seconds. It is built by NorthReason.
+
+## Key Features
+- Instant generation of structured lesson plans.
+- Supports multiple curriculums: Common Core, IB, British, and General.
+- Translates lesson plans into over 100 global languages.
+- Allows custom duration, grade levels, and learning objectives.
+- No signup or registration required.
+
+## Main Pages
+- [Home Page](https://lessonplanai.site/): Overview of the tool and features.
+- [Create Plan](https://lessonplanai.site/tool.html): The actual AI generator tool.
+- [About Us](https://lessonplanai.site/about.html): Information about the mission.
+- [Contact](https://lessonplanai.site/contact.html): Support email (support@northreason.com).
+- [Blog](https://lessonplanai.site/blog.html): Educational resources and tips.
+
+## Contact & Ownership
+- Creator: NorthReason
+- Website: https://northreason.com/
+- Support Email: support@northreason.com

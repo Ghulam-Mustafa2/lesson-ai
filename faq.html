@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ - LessonAI</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1f5fff;--navy:#0b1b4d;--ink:#10224f;--muted:#5b6788;--bg:#f4f7ff;--line:#e3e9f8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;display:flex;flex-direction:column;min-height:100vh}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:800px;margin:0 auto;padding:0 24px;width:100%}
+header{background:#fff;border-bottom:1px solid var(--line);padding:16px 0;box-shadow:0 2px 10px rgba(0,0,0,0.02);position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo svg{width:36px;height:36px;}
+.logo b{font-size:22px;font-weight:800;color:var(--navy);line-height:1;}
+.logo b span{color:var(--blue);}
+.back-link{font-size:14px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:6px;}
+.back-link:hover{color:var(--blue)}
+main{flex-grow:1;padding:60px 0 80px;}
+.page-title{text-align:center;margin-bottom:40px;}
+.page-title h1{font-size:42px;color:var(--navy);font-weight:800;margin-bottom:12px;}
+.page-title p{font-size:18px;color:var(--muted);}
+.faq-card{background:#fff;border-radius:24px;padding:40px;box-shadow:0 15px 40px rgba(31,63,160,.08);border:1px solid var(--line);}
+details{background:var(--bg);border:1px solid var(--line);border-radius:12px;margin-bottom:16px;overflow:hidden;transition:.2s;}
+details:hover{border-color:#c2d6ff;}
+summary{padding:20px;font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+";font-size:24px;color:var(--blue);font-weight:400;}
+details[open] summary::after{content:"-";}
+details[open]{background:#fff;border-color:var(--blue);box-shadow:0 4px 15px rgba(31,95,255,.05);}
+.content{padding:0 20px 20px 20px;color:var(--muted);font-size:15px;line-height:1.6;}
+footer{text-align:center;padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line);background:#fff;}
+@media(max-width:768px){ .faq-card{padding:20px;} .page-title h1{font-size:32px;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 48 48"><path d="M4 10c7-2 14-1 20 3v26c-6-4-13-5-20-3z" fill="#1f5fff"/><path d="M44 10c-7-2-14-1-20 3v26c6-4 13-5 20-3z" fill="#4a86ff"/></svg>
+      <div><b>Lesson<span>AI</span></b></div>
+    </a>
+    <a href="index.html" class="back-link">&larr; Back to Home</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-title">
+    <h1>Frequently Asked Questions</h1>
+    <p>Everything you need to know about LessonAI.</p>
+  </div>
+
+  <div class="faq-card">
+    
+    <details>
+      <summary>Is LessonAI really 100% free?</summary>
+      <div class="content">Yes! LessonAI is completely free to use. There are no hidden charges, no credit card requirements, and no sign-up needed. We believe in providing free tools for educators worldwide.</div>
+    </details>
+
+    <details>
+      <summary>Do I need to create an account to generate a lesson plan?</summary>
+      <div class="content">No account is required. Simply enter your subject, grade level, and topic on our tool page, and click "Generate." It's that simple.</div>
+    </details>
+
+    <details>
+      <summary>Can I edit the generated lesson plan?</summary>
+      <div class="content">Absolutely. The AI generates a highly structured draft. You can easily copy the text, save it as a PDF, or print it and make your own custom edits to fit your specific classroom needs.</div>
+    </details>
+
+    <details>
+      <summary>Does it support different curriculums (IB, Common Core, etc.)?</summary>
+      <div class="content">Yes. Our advanced tool allows you to select your specific curriculum framework and instruction language, ensuring the plan aligns with your regional educational standards.</div>
+    </details>
+
+    <details>
+      <summary>How accurate are the lesson plans?</summary>
+      <div class="content">Our AI is trained on vast educational data, but it can occasionally make mistakes. We always recommend that teachers review and verify the content before presenting it in a classroom setting.</div>
+    </details>
+
+    <details>
+      <summary>Can I use LessonAI on my mobile phone?</summary>
+      <div class="content">Yes, our website is fully responsive and optimized for mobile devices, tablets, and desktop computers.</div>
+    </details>
+
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 LessonAI. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
